@@ -43,7 +43,11 @@
     complete: null, //所有渲染完成的回调函数
     dataKey: 'app-temp', //实例化后的data键值，方便后续通过data('app-temp')取出；
 };
-//如果options也可以为字符串，相当于设置了options.src;
+//options也可以为字符串，相当于设置了options.src;
+
+//模板说明
+// 如：{{row.filed}},两个大括号中间的为js代码，可使用三元运算，自定义函数。
+// 除了row，还有data,原始数据：options.src或请求回来的json，_no，列表循环时的序号，从1开始。
 
 // 单条信息渲染
 var info = $('#info').app_temp('./data/info_1.json');
