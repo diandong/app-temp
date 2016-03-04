@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>ui-switch</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
@@ -37,7 +38,6 @@
                     <div class="panel-body">
                         <ul class="list-group" id="grid">
                         </ul>
-
                         <script type="text/temp" id="list_temp_1">
                             <li class="list-group-item">
                                 <a href="{{row.href}}"> <b>{{_no + '.'}}</b> {{row.title}}</a>
@@ -67,7 +67,6 @@ var grid = $('#grid').app_temp({
     src: './data/list_1.json',
     tempId: '#list_temp_2'
 });
-
 </script>
 
 </html>

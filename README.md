@@ -34,7 +34,7 @@
 //配置参数 $('#info').app_temp(options) 中的options：
 {
     src: null, //数据源，可以是一个url或者一个json数据
-    tempId: null, //模板id，如'#temp',默认在实例对象里面寻找noscript
+    tempId: null, //模板id，如'#temp',默认在实例对象里面寻找script
     data: null, //同ajax的data
     type: 'GET', //同ajax的type
     dataType: 'JSON', //同ajax的dataType
