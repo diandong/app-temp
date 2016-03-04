@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <!-- <meta name="renderer" content="webkit"> -->
+    <title>ui-switch</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>jQuery模板插件演示</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-heading">单条信息渲染示例</div>
+                    <div class="panel-body" id="info">
+                        <script type="text/temp">
+                            <h2 class="title"> {{row.title}} </h2>
+                            <h6 class="title-ext"> 作者：{{row.author}}  发布于：{{row.postTime}} 评论：{{row.comments}}条 </h6>
+                            <div class="content">
+                                {{row.content}}
+                            </div>
+                        </script>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-success" onclick="info.render('./data/info_1.json')">文章一</button>
+                        <button class="btn btn-success" onclick="info.render('./data/info_2.json')">文章二</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">列表信息渲染示例</div>
+                    <div class="panel-body">
+                        <ul class="list-group" id="grid">
+                        </ul>
+
+                        <script type="text/temp" id="list_temp_1">
+                            <li class="list-group-item">
+                                <a href="{{row.href}}"> <b>{{_no + '.'}}</b> {{row.title}}</a>
+                            </li>
+                        </script>
+                        <script type="text/temp" id="list_temp_2">
+                            <a href="{{row.href}}" class="list-group-item"><b>{{_no + '.'}}</b> {{row.title}} <span class="badge" title="评论数">{{row.comments}}</span></a>
+                        </script>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-success" onclick="grid.setTemp('#list_temp_1').render('./data/list_1.json')">模板一</button>
+                        <button class="btn btn-success" onclick="grid.setTemp('#list_temp_2').render('./data/list_2.json')">模板二</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../_common/jquery.min.js"></script>
+<script src="../src/app-temp.js"></script>
+<script>
+// 单条信息
+var info = $('#info').app_temp('./data/info_1.json');
+
+// 列表
+var grid = $('#grid').app_temp({
+    src: './data/list_1.json',
+    tempId: '#list_temp_2'
+});
+
+</script>
+
+</html>
