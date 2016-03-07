@@ -18,7 +18,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">单条信息渲染示例</div>
                     <div class="panel-body" id="info">
-                        <script type="text/temp">
+                        <script type="text/html">
                             <h2 class="title"> {{row.title}} </h2>
                             <h6 class="title-ext"> 作者：{{row.author}}  发布于：{{row.postTime}} 评论：{{row.comments}}条 </h6>
                             <div class="content">
@@ -38,12 +38,12 @@
                     <div class="panel-body">
                         <ul class="list-group" id="grid">
                         </ul>
-                        <script type="text/temp" id="list_temp_1">
+                        <script type="text/html" id="list_temp_1">
                             <li class="list-group-item">
                                 <a href="{{row.href}}"> <b>{{_no + '.'}}</b> {{row.title}}</a>
                             </li>
                         </script>
-                        <script type="text/temp" id="list_temp_2">
+                        <script type="text/html" id="list_temp_2">
                             <a href="{{row.href}}" class="list-group-item"><b>{{_no + '.'}}</b> {{row.title}} <span class="badge" title="评论数">{{row.comments}}</span></a>
                         </script>
                     </div>

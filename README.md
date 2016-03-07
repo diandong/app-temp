@@ -7,7 +7,7 @@
 
 <!-- 单条信息 -->
 <div id="info">
-    <script type="text/temp">
+    <script type="text/html">
         <h2 class="title"> {{row.title}} </h2>
         <h6 class="title-ext"> 作者：{{row.author}}  发布于：{{row.postTime}} 评论：{{row.comments}}条 </h6>
         <div class="content">
@@ -19,12 +19,12 @@
 <!-- 列表 -->
 <ul class="list-group" id="grid">
 </ul>
-<script type="text/temp" id="list_temp_1">
+<script type="text/html" id="list_temp_1">
     <li class="list-group-item">
         <a href="{{row.href}}"> <b>{{_no + '.'}}</b> {{row.title}}</a>
     </li>
 </noscript>
-<script type="text/temp" id="list_temp_2">
+<script type="text/html" id="list_temp_2">
     <a href="{{row.href}}" class="list-group-item"><b>{{_no + '.'}}</b> {{row.title}} <span class="badge" title="评论数">{{row.comments}}</span></a>
 </script>
 
@@ -34,7 +34,7 @@
 //配置参数 $('#info').app_temp(options) 中的options：
 {
     src: null, //数据源，可以是一个url或者一个json数据
-    tempId: null, //模板id，如'#temp',默认在实例对象里面寻找script
+    tempId: null, //模板id，如'#temp',默认在实例对象里面寻找script[type='text/html']
     data: null, //同ajax的data
     type: 'GET', //同ajax的type
     dataType: 'JSON', //同ajax的dataType
